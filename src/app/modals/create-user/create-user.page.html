@@ -1,0 +1,19 @@
+<ion-content>
+<div class="page-title">
+  <span>Delete Users</span>
+</div>
+<div class="page-text">
+  <span>Here you can delete the users by pressing the delete button, this will be done instantly so be carefull.</span>
+</div>
+<form (ngSubmit)="createUser()">
+  <ion-item>
+    <ion-label>Todo</ion-label>
+    <ion-input type="text" [(ngModel)]="user.id" name="id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-textarea [(ngModel)]="user.name" name="name"></ion-textarea>
+  </ion-item>
+  <button ion-button type="submit" block>Create User</button>
+</form>
+</ion-content>
