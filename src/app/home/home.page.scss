@@ -66,4 +66,18 @@ ion-icon{
   align-items: center;
 }
 
+.no-data{
+  text-align: center; 
+  --background: whitesmoke;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #88888860;
+  ion-label{
+  font-size: 1.5em;
+  color: var(--ion-color-danger);
+  font-weight: bolder;
+  font-family: cursive;
+  }
+}
+
 

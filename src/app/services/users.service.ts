@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './../interfaces/user';
 import { Storage } from '@ionic/storage';
+import { Resolver } from 'dns';
 @Injectable({
   providedIn: 'root',
 })
@@ -40,9 +41,8 @@ export class UsersService {
         if (data) {
           resolve(data);
         }
-        else {
-          resolve(false);
-        }
+      }).catch((e) => {
+        resolve(e);
       });
     });
   }

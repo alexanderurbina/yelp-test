@@ -10,7 +10,7 @@ import { CreateUserPage } from './../modals/create-user/create-user.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public user: User[];
+  public user: User[] = [];
   constructor(
     private userService: UsersService,
     public loadingController: LoadingController,
