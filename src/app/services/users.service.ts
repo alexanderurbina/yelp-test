@@ -24,7 +24,7 @@ export class UsersService {
       name: 'George',
     },
   ];
-  constructor(private storage: Storage) {}
+  constructor(private storage: Storage) { }
 
   getUsers() {
     return this.Data;
@@ -34,8 +34,21 @@ export class UsersService {
     this.storage.set('users', users);
   }
 
-  loadUsers(){
+  loadUsers() {
     return this.storage.get('users');
+  }
+
+  checkDB() {
+    return new Promise(resolve => {
+      this.storage.get('users').then((data) => {
+        if (data) {
+          resolve(data);
+        }
+        else {
+          resolve(false);
+        }
+      });
+    });
   }
 
   async createUser(data) {

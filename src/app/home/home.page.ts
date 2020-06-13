@@ -81,11 +81,25 @@ export class HomePage {
     toast.present();
   }
 
-  async openCreateUser() {
-    const modal = await this.modalController.create({
-      component: CreateUserPage
+  async presentToastError() {
+    const toast = await this.toastController.create({
+      color: 'danger',
+      message: 'DB empty, please save some data first.',
+      duration: 2000
     });
-    return await modal.present();
+    toast.present();
+  }
+
+  async openCreateUser() {
+    if (await this.userService.checkDB() !== false ) {
+      const modal = await this.modalController.create({
+        component: CreateUserPage
+      });
+      return await modal.present();
+    }
+    else {
+      this.presentToastError();
+    }
   }
 }
 
