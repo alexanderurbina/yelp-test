@@ -39,10 +39,8 @@ export class UsersService {
   }
 
   async createUser(data) {
-    this.user.push(await this.storage.get('users'));
-    console.log(this.user);
+    this.user = await this.storage.get('users');
     this.user.push(data);
-    console.log(this.user);
     this.storage.set('users', this.user);
   }
 

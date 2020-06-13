@@ -1,19 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title size="large">
+      <img src="./../../assets/img/logo.png" alt="Logo">
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()" color="light"> <ion-icon name="close-circle-outline"></ion-icon> </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-<div class="page-title">
-  <span>Delete Users</span>
-</div>
-<div class="page-text">
-  <span>Here you can delete the users by pressing the delete button, this will be done instantly so be carefull.</span>
-</div>
-<form (ngSubmit)="createUser()">
-  <ion-item>
-    <ion-label>Todo</ion-label>
-    <ion-input type="text" [(ngModel)]="user.id" name="id"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Description</ion-label>
-    <ion-textarea [(ngModel)]="user.name" name="name"></ion-textarea>
-  </ion-item>
-  <button ion-button type="submit" block>Create User</button>
-</form>
+  <div class="page-title">
+    <span>Create Users</span>
+  </div>
+  <div class="page-text">
+    <span>Here you can create new users by pressing complete the form and press the save button, this will be done
+      instantly.</span>
+  </div>
+  <form (ngSubmit)="createUser()">
+    <ion-item>
+      <ion-label position="floating" color="danger">User ID</ion-label>
+      <ion-input type="number" [(ngModel)]="user.id" name="id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="danger">User Name</ion-label>
+      <ion-input type="text"[(ngModel)]="user.name" name="name"></ion-input>
+    </ion-item>
+    <div class="page-text">
+      <span>To see this change you must load by IndexDB on delete page.</span>
+    </div>
+    <ion-button type="submit" color="danger" block expand="full">Create User</ion-button>
+  </form>
 </ion-content>

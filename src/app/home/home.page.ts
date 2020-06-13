@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { UsersService } from './../services/users.service';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ModalController, ToastController } from '@ionic/angular';
 import { User } from '../interfaces/user';
-import { ToastController } from '@ionic/angular';
-import { ModalController } from '@ionic/angular';
 import { CreateUserPage } from './../modals/create-user/create-user.page';
 
 @Component({
@@ -12,7 +10,7 @@ import { CreateUserPage } from './../modals/create-user/create-user.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  user: User[];
+  public user: User[];
   constructor(
     private userService: UsersService,
     public loadingController: LoadingController,
@@ -85,8 +83,7 @@ export class HomePage {
 
   async openCreateUser() {
     const modal = await this.modalController.create({
-      component: CreateUserPage,
-      cssClass: 'my-custom-class'
+      component: CreateUserPage
     });
     return await modal.present();
   }
