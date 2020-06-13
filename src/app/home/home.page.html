@@ -12,28 +12,33 @@
       <span>Delete Users</span>
     </div>
     <div class="page-text">
-      <span>Here you can delete the users by pressing the delete button, this will be done instantly so be carefull.</span>
+      <span>Here you can delete the users by pressing the delete button, this will be done instantly so be
+        carefull.</span>
     </div>
     <div class="button-load">
-      <ion-button color="danger" (click)="loadUsers()"><ion-icon name="reload-outline"></ion-icon> Load From IndexDB</ion-button>
-      <ion-button color="secondary" (click)="openCreateUser()"><ion-icon name="person-add-outline"></ion-icon> Create User</ion-button>
+      <ion-button color="danger" (click)="loadUsers()">
+        <ion-icon name="reload-outline"></ion-icon> Load From IndexDB
+      </ion-button>
+      <ion-button color="secondary" (click)="openCreateUser()">
+        <ion-icon name="person-add-outline"></ion-icon> Create User
+      </ion-button>
     </div>
     <ion-grid>
       <!--Table Header-->
       <ion-row class="row-title">
         <ion-col>
           <div>
-            <span>ID</span> 
+            <span>ID</span>
           </div>
         </ion-col>
         <ion-col>
           <div>
-            <span>Name</span> 
+            <span>Name</span>
           </div>
         </ion-col>
         <ion-col>
           <div>
-            <span>Actions</span> 
+            <span>Actions</span>
           </div>
         </ion-col>
       </ion-row>
@@ -51,7 +56,9 @@
         </ion-col>
         <ion-col>
           <div>
-            <ion-button color="danger" (click)="deleteUser(i)"><ion-icon name="trash-outline"></ion-icon> Delete</ion-button>
+            <ion-button color="danger" (click)="deleteUser(i)">
+              <ion-icon name="trash-outline"></ion-icon> Delete
+            </ion-button>
           </div>
         </ion-col>
       </ion-row>
@@ -59,7 +66,8 @@
 
     <ion-footer>
       <ion-toolbar>
-        <ion-button color="success" expand="full" (click)="saveChanges()" class="button-success">Save Changes</ion-button>
+        <ion-button color="success" expand="full" (click)="saveChanges()" class="button-success">Save Changes
+        </ion-button>
       </ion-toolbar>
     </ion-footer>
   </div>

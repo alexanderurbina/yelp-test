@@ -17,7 +17,10 @@ import { IonicStorageModule } from '@ionic/storage';
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()],
+    IonicStorageModule.forRoot({
+      name: '_mydb',
+      driverOrder: ['websql']
+    })],
   providers: [
     StatusBar,
     SplashScreen,

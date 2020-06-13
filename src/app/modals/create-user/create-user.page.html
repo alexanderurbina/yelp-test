@@ -4,7 +4,9 @@
       <img src="./../../assets/img/logo.png" alt="Logo">
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="close()" color="light"> <ion-icon name="close-circle-outline"></ion-icon> </ion-button>
+      <ion-button (click)="close()" color="light">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -23,7 +25,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="danger">User Name</ion-label>
-      <ion-input type="text"[(ngModel)]="user.name" name="name"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
     </ion-item>
     <div class="page-text">
       <span>To see this change you must load by IndexDB on delete page.</span>

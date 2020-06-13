@@ -15,13 +15,13 @@ export class HomePage {
     private userService: UsersService,
     public loadingController: LoadingController,
     public toastController: ToastController,
-    public modalController: ModalController ) {}
+    public modalController: ModalController) { }
 
   ionViewWillEnter() {
     this.user = this.userService.getUsers();
   }
 
-  async loadUsers(){
+  async loadUsers() {
     const loading = await this.loadingController.create({
       message: 'Please wait...',
       duration: 2000
@@ -32,7 +32,7 @@ export class HomePage {
     this.presentToastLoad();
   }
 
-  async saveChanges(){
+  async saveChanges() {
     const loading = await this.loadingController.create({
       message: 'Please wait...',
       duration: 2000
