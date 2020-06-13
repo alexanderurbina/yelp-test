@@ -28,7 +28,9 @@ export class HomePage {
     });
     await loading.present();
     const { role, data } = await loading.onDidDismiss();
-    this.user = await this.userService.loadUsers();
+    await this.userService.loadUsers().then(( user: User[]) => {
+      this.user = user;
+    });
     this.presentToastLoad();
   }
 
@@ -91,7 +93,7 @@ export class HomePage {
   }
 
   async openCreateUser() {
-    if (await this.userService.checkDB() !== false ) {
+    if (await this.userService.loadUsers() !== false ) {
       const modal = await this.modalController.create({
         component: CreateUserPage
       });

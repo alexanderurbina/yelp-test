@@ -35,10 +35,6 @@ export class UsersService {
   }
 
   loadUsers() {
-    return this.storage.get('users');
-  }
-
-  checkDB() {
     return new Promise(resolve => {
       this.storage.get('users').then((data) => {
         if (data) {
